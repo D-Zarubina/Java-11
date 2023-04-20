@@ -47,7 +47,7 @@ public class TodosTest {
     }
 
     @Test
-    public void searchForTodosFindOneTaskInMeeting(){
+    public void searchForTodosFindOneTask(){
         SimpleTask simpleTask = new SimpleTask(1, "купить литые диски");
         String[] subtasks = {"диски", "болты"};
         Epic epic = new Epic(11, subtasks);
@@ -64,7 +64,7 @@ public class TodosTest {
     }
 
     @Test
-    public void searchForTodosFindNoneTaskInMeeting() {
+    public void searchForTodosFindNoneTask() {
         SimpleTask simpleTask = new SimpleTask(1, "купить литые диски");
         String[] subtasks = {"диски", "болты"};
         Epic epic = new Epic(11, subtasks);
