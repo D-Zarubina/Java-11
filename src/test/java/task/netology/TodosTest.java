@@ -63,4 +63,21 @@ public class TodosTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void searchForTodosFindNoneTaskInMeeting() {
+        SimpleTask simpleTask = new SimpleTask(1, "купить литые диски");
+        String[] subtasks = {"диски", "болты"};
+        Epic epic = new Epic(11, subtasks);
+        Meeting meeting = new Meeting(111, "дипломная работа", "развитие ресурсов", "25.04.2023 12:00");
+
+        Todos todos = new Todos();
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
+
+        Task[] actual = todos.search("машина");
+        Task[] expected = {};
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
 }
